@@ -29,12 +29,12 @@
 
 ## PART 3 Database setup
 
-- Create a PostgreSQL database
-- Setup DrizzleORM
-- Create users schema
-- Migrate how to use drizzle-kit
+- Create a PostgreSQL database ✅
+- Setup DrizzleORM ✅
+- Create users schema ✅
+- Migrate changes to database ✅
 
-- Why DrizzleORM?
+- Why DrizzleORM? ✅
   - Only ORM with both relational and SQL-like query APIs
   - Serverless by default
   - understand the queries
