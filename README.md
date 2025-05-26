@@ -58,7 +58,8 @@
   - leverage react server components as "loaders"
   - faster load time
   - parallel data loading
-    ![Screenshot](trpcnext.svg)
+  ### Next.js Server-first Data Pattern
+  ![Screenshot](trpcnext.svg)
 
 ## Deploy on Vercel
 
