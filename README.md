@@ -61,6 +61,21 @@
   ### Next.js Server-first Data Pattern
   ![Screenshot](trpcnext.svg)
 
+## PART 6 tRPC configuration 🍉
+
+- Enable transformer on tRPC ✅
+- Add auth to tRPC context ✅
+- Add protectedProcedure ✅
+- Add rate limiting ✅
+
+## PART 7 Video categpries 🛸
+
+- Create categories schema
+- Push changes to the database
+- Seed categories
+- Prefetch categories
+- Create categories component
+
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
