@@ -1,3 +1,12 @@
+## PART 0 Basic Setup
+
+- Configure environment
+- runtime (Bun)
+- package manager (bun)
+- Why bun ?
+  - Easily run Typescript scripts with ES6 imports
+  - Less issues with depency issues regarding React 19
+
 ## PART 1 Basic layout
 
 - Add logo asset ✅
@@ -11,12 +20,24 @@
 
 ## PART 2 Authentication
 
-- Integrate clerk
-- Add Sign in screens
-- Add UserButton
-- Add middleware
-- Use auth state on sidebar sections
-- Protect routes
+- Integrate clerk ✅
+- Add Sign in screens ✅
+- Add UserButton ✅
+- Add middleware ✅
+- Use auth state on sidebar sections ✅
+- Protect routes ✅
+
+## PART 3 Database setup
+
+- Create a PostgreSQL database
+- Setup DrizzleORM
+- Create users schema
+- Migrate how to use drizzle-kit
+
+- Why DrizzleORM?
+  - Only ORM with both relational and SQL-like query APIs
+  - Serverless by default
+  - understand the queries
 
 ## Deploy on Vercel
 
