@@ -1,4 +1,4 @@
-## PART 0 Basic Setup
+## PART 0 Basic Setup ❤️
 
 - Configure environment
 - runtime (Bun)
@@ -7,7 +7,7 @@
   - Easily run Typescript scripts with ES6 imports
   - Less issues with depency issues regarding React 19
 
-## PART 1 Basic layout
+## PART 1 Basic layout 🌟
 
 - Add logo asset ✅
 - Basic app router setup ✅
@@ -18,7 +18,7 @@
   - Search input ✅
   - Sign in component ✅
 
-## PART 2 Authentication
+## PART 2 Authentication 🌸
 
 - Integrate clerk ✅
 - Add Sign in screens ✅
@@ -27,17 +27,38 @@
 - Use auth state on sidebar sections ✅
 - Protect routes ✅
 
-## PART 3 Database setup
+## PART 3 Database setup 🌵
 
 - Create a PostgreSQL database ✅
 - Setup DrizzleORM ✅
 - Create users schema ✅
 - Migrate changes to database ✅
 
-- Why DrizzleORM? ✅
+- Why DrizzleORM ? ✅
   - Only ORM with both relational and SQL-like query APIs
   - Serverless by default
   - understand the queries
+
+## PART 4 Webhook sync 🌈
+
+- Create ngrok account ✅
+- Obtain a static domain ✅
+- Add script to concurrently run local tunnel & app ✅
+- create the users webhook ✅
+- Connect the webhook on Clerk dashboard ✅
+
+## PART 5 tRPC setup 🌴
+
+- why tRPC ?
+  - end-to-end typesafety
+  - familiar hooks (useQuery, useMutation etc.)
+  - authenticated prefetching
+- Why prefetch ?
+  - "render as you fetch" concept
+  - leverage react server components as "loaders"
+  - faster load time
+  - parallel data loading
+    ![Screenshot](trpcnext.svg)
 
 ## Deploy on Vercel
 
