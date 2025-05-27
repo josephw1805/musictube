@@ -68,13 +68,20 @@
 - Add protectedProcedure ✅
 - Add rate limiting ✅
 
-## PART 7 Video categpries 🛸
+## PART 7 Video categories 🛸
 
-- Create categories schema
-- Push changes to the database
-- Seed categories
-- Prefetch categories
-- Create categories component
+- Create categories schema ✅
+- Push changes to the database ✅
+- Seed categories ✅
+- Organize tRPC routers ✅
+- Prefetch categories ✅
+- Create categories component ✅
+
+## PART 8 Studio layout 🍩
+
+- Create studio route group
+- Create studio layout
+- Protect studio routes
 
 ## Deploy on Vercel
 
