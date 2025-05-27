@@ -91,8 +91,13 @@
 
 ## PART 10 Infinite loading 🍄
 
-- Add suspense and error boundaries
-- Create reuseable InfiniteScroll component
+- Add suspense and error boundaries ✅
+- Create reuseable InfiniteScroll component ✅
+
+## PART 11 Mux integration 🍓
+
+- Create a responsive dialog
+- Create upload modal
 
 ## Deploy on Vercel
 
