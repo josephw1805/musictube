@@ -33,7 +33,6 @@
 - Setup DrizzleORM ✅
 - Create users schema ✅
 - Migrate changes to database ✅
-
 - Why DrizzleORM ? ✅
   - Only ORM with both relational and SQL-like query APIs
   - Serverless by default
@@ -85,10 +84,15 @@
 
 ## PART 9 Studio videos 🍣
 
-- Create videos Schema
-- Push database changes
-- Create studio procedures
-- Add video record creation
+- Create videos Schema ✅
+- Push database changes ✅
+- Create studio procedures ✅
+- Add video record creation ✅
+
+## PART 10 Infinite loading 🍄
+
+- Add suspense and error boundaries
+- Create reuseable InfiniteScroll component
 
 ## Deploy on Vercel
 
