@@ -79,9 +79,16 @@
 
 ## PART 8 Studio layout 🍩
 
-- Create studio route group
-- Create studio layout
-- Protect studio routes
+- Create studio route group ✅
+- Create studio layout ✅
+- Protect studio routes ✅
+
+## PART 9 Studio videos 🍣
+
+- Create videos Schema
+- Push database changes
+- Create studio procedures
+- Add video record creation
 
 ## Deploy on Vercel
 
