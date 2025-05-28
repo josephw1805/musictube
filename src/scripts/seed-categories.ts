@@ -2,12 +2,20 @@ import { db } from "@/db";
 import { categories } from "@/db/schema";
 
 const categoryNames = [
-  "Studio albums",
-  "Compilation albums",
-  "Music Video",
-  "Live Performance",
-  "Original Soundtrack",
-  "Singles",
+  "Music",
+  "Gaming",
+  "Education",
+  "Entertainment",
+  "Vlogs",
+  "Technology",
+  "Beauty & Fashion",
+  "Sports",
+  "News & Politics",
+  "Film & Animation",
+  "Food & Cooking",
+  "Science & Nature",
+  "Health & Wellness",
+  "Autos & Vehicles",
 ];
 
 async function main() {

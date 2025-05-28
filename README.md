@@ -96,8 +96,21 @@
 
 ## PART 11 Mux integration 🍓
 
-- Create a responsive dialog
-- Create upload modal
+- Create a responsive dialog ✅
+- Create upload modal ✅
+
+## PART 12 Mux integration 🍊
+
+- Update video Schema
+- Handle "video.asset.ready" event
+  - assign thumbnail
+  - assign preview
+- Handle "video.asset.errored" event
+  - update status
+- Handle "video.asset.deleted" event
+  - delete from database
+- Handle "video.asset.track.ready" event
+  - update trackId and trackStatus
 
 ## Deploy on Vercel
 
