@@ -114,11 +114,19 @@
 
 ## PART 13 Video form 🐸
 
-- Add skeleton to videos-section
-- Create video form page
-- Create video player
-- Add ability to update video information
+- Add skeleton to videos-section ✅
+- Create video form page ✅
+- Create video player ✅
+- Add ability to update video information ✅
   (Title, Description, Category, Visiblity)
+
+## PART 14 Video thumbnails 🪼
+
+- Integrate UploadThing
+- Add thumbnail upload functionality
+- Add thumbnail restore functionality
+- Refactor thumbnail fields in the schema
+  - Proper UploadThing cleanup
 
 ## Deploy on Vercel
 
