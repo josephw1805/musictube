@@ -12,6 +12,16 @@ export const videosRouter = createTRPCRouter({
         passthrough: userId,
         playback_policies: ["public"],
         static_renditions: [{ resolution: "highest" }],
+        inputs: [
+          {
+            generated_subtitles: [
+              {
+                language_code: "en",
+                name: "English",
+              },
+            ],
+          },
+        ],
       },
       cors_origin: "*", // TODO: In production, set to the url
     });
