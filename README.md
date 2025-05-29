@@ -128,20 +128,24 @@
 - Refactor thumbnail fields in the schema ✅
   - Proper UploadThing cleanup ✅
 
-## PART 15 AI background jobs 🐶
+## PART 15 AI background jobs 🧠
 
-Why background jobs?
-
-- avoid timeout from long-running tasks
-  - problematic with AI generations
-- ensure retries in case of failure
-
-- Integrate Upstash workflow
-- Trigger a background job
-- Add background jobs
-  - Generate title
-  - Generate description
+- Why background jobs ?
+  - avoid timeout from long-running tasks
+    - problematic with AI generations
+  - ensure retries in case of failure
+- Integrate Upstash workflow ✅
+- Trigger a background job ✅
+- Add background jobs for AI ✅
+  - Generate title ✅
+  - Generate description ✅
   - Generate thumbnail
+
+## PART 15 AI thumbnails 🤖
+
+- Create thumbnail prompt modal
+- Create thumbnail generation workflow
+- Add skeleton to form-section loading state
 
 ## Deploy on Vercel
 

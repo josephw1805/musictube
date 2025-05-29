@@ -15,10 +15,11 @@ import {
   CopyCheck,
   Globe2,
   ImagePlus,
+  Loader2,
   Lock,
   MoreVertical,
   RotateCcw,
-  Sparkle,
+  Sparkles,
   Trash,
 } from "lucide-react";
 import { useForm } from "react-hook-form";
@@ -108,6 +109,39 @@ export const FormSectionSuspense = ({ videoId }: FormSectionProps) => {
     },
   });
 
+  const generateThumbnail = trpc.videos.generateThumbnail.useMutation({
+    onSuccess: () => {
+      toast.success("Background job started", {
+        description: "This may take some time",
+      });
+    },
+    onError: (error) => {
+      toast.error(error.message);
+    },
+  });
+
+  const generateTitle = trpc.videos.generateTitle.useMutation({
+    onSuccess: () => {
+      toast.success("Background job started", {
+        description: "This may take some time",
+      });
+    },
+    onError: (error) => {
+      toast.error(error.message);
+    },
+  });
+
+  const generateDescription = trpc.videos.generateDescription.useMutation({
+    onSuccess: () => {
+      toast.success("Background job started", {
+        description: "This may take some time",
+      });
+    },
+    onError: (error) => {
+      toast.error(error.message);
+    },
+  });
+
   const form = useForm<z.infer<typeof videoUpdateSchema>>({
     resolver: zodResolver(videoUpdateSchema),
     defaultValues: video,
@@ -178,7 +212,25 @@ export const FormSectionSuspense = ({ videoId }: FormSectionProps) => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>
-                      Title {/* TODO: Add AI generate button */}
+                      <div className="flex items-center gap-x-2">
+                        Title
+                        <Button
+                          size="icon"
+                          variant="outline"
+                          className="rounded-full size-6"
+                          type="button"
+                          onClick={() => generateTitle.mutate({ id: videoId })}
+                          disabled={
+                            generateTitle.isPending || !video.muxTrackId
+                          }
+                        >
+                          {generateTitle.isPending ? (
+                            <Loader2 className="animate-spin" />
+                          ) : (
+                            <Sparkles />
+                          )}
+                        </Button>
+                      </div>
                     </FormLabel>
                     <FormControl>
                       <Input
@@ -196,7 +248,27 @@ export const FormSectionSuspense = ({ videoId }: FormSectionProps) => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>
-                      Description {/* TODO: Add AI generate button */}
+                      <div className="flex items-center gap-x-2">
+                        Description
+                        <Button
+                          size="icon"
+                          variant="outline"
+                          className="rounded-full size-6"
+                          type="button"
+                          onClick={() =>
+                            generateDescription.mutate({ id: videoId })
+                          }
+                          disabled={
+                            generateDescription.isPending || !video.muxTrackId
+                          }
+                        >
+                          {generateDescription.isPending ? (
+                            <Loader2 className="animate-spin" />
+                          ) : (
+                            <Sparkles />
+                          )}
+                        </Button>
+                      </div>
                     </FormLabel>
                     <FormControl>
                       <Textarea
@@ -242,10 +314,16 @@ export const FormSectionSuspense = ({ videoId }: FormSectionProps) => {
                               <ImagePlus className="size-4 mr-1" />
                               Change
                             </DropdownMenuItem>
-                            <DropdownMenuItem>
-                              <Sparkle className="size-4 mr-1" />
-                              AI-Generated
-                            </DropdownMenuItem>
+                            {video.muxTrackId && (
+                              <DropdownMenuItem
+                                onClick={() =>
+                                  generateThumbnail.mutate({ id: videoId })
+                                }
+                              >
+                                <Sparkles className="size-4 mr-1" />
+                                AI-Generated
+                              </DropdownMenuItem>
+                            )}
                             {video.muxAssetId && (
                               <DropdownMenuItem
                                 onClick={() =>
