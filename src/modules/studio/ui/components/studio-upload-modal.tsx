@@ -35,7 +35,7 @@ export const StudioUploadModal = () => {
         onOpenChange={() => create.reset()}
       >
         {create.data?.url ? (
-          <StudioUploader endpoint={create.data?.url} onSuccess={() => {}} />
+          <StudioUploader endpoint={create.data?.url} onSuccess={onSuccess} />
         ) : (
           <Loader2 />
         )}

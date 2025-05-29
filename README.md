@@ -122,11 +122,26 @@
 
 ## PART 14 Video thumbnails 🪼
 
-- Integrate UploadThing
-- Add thumbnail upload functionality
-- Add thumbnail restore functionality
-- Refactor thumbnail fields in the schema
-  - Proper UploadThing cleanup
+- Integrate UploadThing ✅
+- Add thumbnail upload functionality ✅
+- Add thumbnail restore functionality ✅
+- Refactor thumbnail fields in the schema ✅
+  - Proper UploadThing cleanup ✅
+
+## PART 15 AI background jobs 🐶
+
+Why background jobs?
+
+- avoid timeout from long-running tasks
+  - problematic with AI generations
+- ensure retries in case of failure
+
+- Integrate Upstash workflow
+- Trigger a background job
+- Add background jobs
+  - Generate title
+  - Generate description
+  - Generate thumbnail
 
 ## Deploy on Vercel
 

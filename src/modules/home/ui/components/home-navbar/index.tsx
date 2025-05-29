@@ -14,7 +14,7 @@ export const HomeNavbar = () => {
           <Link href="/" className="hidden md:flex">
             <div className="p-4 flex items-center gap-1">
               <Image src="/logo.png" alt="Logo" width={32} height={32} />
-              <p className="text-xl font-semibold tracking-tight">NewTube</p>
+              <p className="text-xl font-semibold tracking-tight">MusicPlace</p>
             </div>
           </Link>
         </div>
