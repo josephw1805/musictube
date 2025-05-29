@@ -141,11 +141,20 @@
   - Generate description ✅
   - Generate thumbnail
 
-## PART 15 AI thumbnails 🤖
+## PART 16 AI thumbnails 🤖
 
-- Create thumbnail prompt modal
-- Create thumbnail generation workflow
-- Add skeleton to form-section loading state
+- Create thumbnail prompt modal ✅
+- Create thumbnail generation workflow ✅
+- Add skeleton to form-section loading state ✅
+
+## PART 17 Video page 🪴
+
+- Create video "getOne" procedure
+  - Inner-join "users" (author informaiton)
+- Prefetching process
+- Video section
+- Comments section (Placeholder)
+- Suggestions section (Placeholder)
 
 ## Deploy on Vercel
 
