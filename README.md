@@ -149,12 +149,19 @@
 
 ## PART 17 Video page 🪴
 
-- Create video "getOne" procedure
-  - Inner-join "users" (author informaiton)
-- Prefetching process
-- Video section
-- Comments section (Placeholder)
-- Suggestions section (Placeholder)
+- Create video "getOne" procedure ✅
+  - Inner-join "users" (author informaiton) ✅
+- Prefetching process ✅
+- Video section ✅
+- Comments section (Placeholder) ✅
+- Suggestions section (Placeholder) ✅
+
+## PART 18 Video views 🎱
+
+- Create video views schema
+- Combine video views for "getOne" videos procedure
+- Create video views creation procedure
+- Trigger video view creation on video play
 
 ## Deploy on Vercel
 

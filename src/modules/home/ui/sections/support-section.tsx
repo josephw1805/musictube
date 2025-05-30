@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export const Support = () => {
+export const SupportSection = () => {
   return (
     <div className="text-black py-5 px-4 md:px-16">
       <div className="max-w-7xl flex flex-col md:flex-row items-center space-y-12 md:space-y-0 md:space-x-8">

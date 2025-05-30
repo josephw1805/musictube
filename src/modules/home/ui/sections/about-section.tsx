@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export const Element = () => {
+export const AboutSection = () => {
   return (
     <div className="min-h-screen px-0 py-12">
       <div className="w-full bg-fuchsia-50 p-6 flex flex-col md:flex-row items-center pt-5 pb-10 pl-10">
