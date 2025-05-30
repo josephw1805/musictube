@@ -158,10 +158,17 @@
 
 ## PART 18 Video views 🎱
 
-- Create video views schema
-- Combine video views for "getOne" videos procedure
-- Create video views creation procedure
-- Trigger video view creation on video play
+- Create video views schema ✅
+- Combine video views for "getOne" videos procedure ✅
+- Create video views creation procedure ✅
+- Trigger video view creation on video play ✅
+
+## PART 19 Video reactions 🥝
+
+- Create video reactions schema
+- Combine video reactions for "getOne" videos procedure
+- Create video reactions like & dislike procedure
+- Connect videoReactions component with new API
 
 ## Deploy on Vercel
 

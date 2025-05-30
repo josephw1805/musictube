@@ -37,18 +37,17 @@ export const VideoPlayer = ({
   }, [playbackId, assetId]);
 
   useEffect(() => {
-    if (
-      typeof window === "undefined" ||
-      !videoRef.current ||
-      !videoSource ||
-      playerRef.current
-    )
+    if (!videoSource || typeof window === "undefined" || playerRef.current) {
       return;
+    }
 
-    const id = setTimeout(() => {
-      if (!videoRef.current) return;
+    const el = videoRef.current;
+    if (!el) return;
 
-      playerRef.current = videojs(videoRef.current, {
+    const initializePlayer = () => {
+      if (playerRef.current || !el) return;
+
+      playerRef.current = videojs(el, {
         autoplay: autoPlay,
         controls: true,
         preload: "auto",
@@ -59,10 +58,29 @@ export const VideoPlayer = ({
       if (onPlay) {
         playerRef.current.on("play", onPlay);
       }
-    }, 0);
+    };
+
+    // Already in DOM
+    if (document.body.contains(el)) {
+      initializePlayer();
+      return;
+    }
+
+    // Observe until element is in DOM
+    const observer = new MutationObserver(() => {
+      if (document.body.contains(el)) {
+        initializePlayer();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
 
     return () => {
-      clearTimeout(id);
+      observer.disconnect();
       if (playerRef.current) {
         playerRef.current.dispose();
         playerRef.current = null;
@@ -73,6 +91,7 @@ export const VideoPlayer = ({
   return (
     <div className="w-full min-h-24 relative" style={{ minHeight: 180 }}>
       <video
+        key={playbackId}
         ref={videoRef}
         className="video-js vjs-theme-city w-full h-full rounded-lg"
         preload="auto"
