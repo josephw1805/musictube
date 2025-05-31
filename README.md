@@ -165,10 +165,16 @@
 
 ## PART 19 Video reactions 🥝
 
-- Create video reactions schema
-- Combine video reactions for "getOne" videos procedure
-- Create video reactions like & dislike procedure
-- Connect videoReactions component with new API
+- Create video reactions schema ✅
+- Combine video reactions for "getOne" videos procedure ✅
+- Create video reactions like & dislike procedure ✅
+- Connect videoReactions component with new API ✅
+
+## PART 20 Subscriptions 🦒
+
+- Create subscriptions schema
+- Combine subscriptions for "getOne" videos procedure
+- Create subscriptionButton component with new API
 
 ## Deploy on Vercel
 
