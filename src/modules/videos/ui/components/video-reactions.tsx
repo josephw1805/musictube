@@ -28,7 +28,6 @@ export const VideoReaction = ({
       // TODO: Invalide "liked" playlist
     },
     onError: (error) => {
-      toast.error("You need to log in");
       if (error.data?.code === "UNAUTHORIZED") {
         clerk.openSignIn();
       }
@@ -40,7 +39,6 @@ export const VideoReaction = ({
       // TODO: Invalide "liked" playlist
     },
     onError: (error) => {
-      toast.error("You need to log in");
       if (error.data?.code === "UNAUTHORIZED") {
         clerk.openSignIn();
       }

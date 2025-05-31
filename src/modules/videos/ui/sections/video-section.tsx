@@ -6,8 +6,8 @@ import { Suspense, useRef } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import dynamic from "next/dynamic";
 import { VideoBanner } from "../components/video-banner";
-import { VideoTopRow } from "../components/video-top-row";
-import { useAuth } from "@clerk/nextjs";
+import { VideoTopRow, VideoTopRowSkeleton } from "../components/video-top-row";
+import { VideoPlayerSkeleton } from "@/modules/videos/ui/components/video-player";
 
 interface VideoSectionProps {
   videoId: string;
@@ -15,11 +15,20 @@ interface VideoSectionProps {
 
 export const VideoSection = ({ videoId }: VideoSectionProps) => {
   return (
-    <Suspense fallback={<p>Loading..</p>}>
+    <Suspense fallback={<VideoSectionSkeleton />}>
       <ErrorBoundary fallback={<p>Error</p>}>
         <VideoSectionSuspense videoId={videoId} />
       </ErrorBoundary>
     </Suspense>
+  );
+};
+
+const VideoSectionSkeleton = () => {
+  return (
+    <>
+      <VideoPlayerSkeleton />
+      <VideoTopRowSkeleton />
+    </>
   );
 };
 
@@ -35,7 +44,6 @@ const VideoPlayer = dynamic(
 
 const VideoSectionSuspense = ({ videoId }: VideoSectionProps) => {
   const hasFiredRef = useRef(false);
-  const { isSignedIn } = useAuth();
   const utils = trpc.useUtils();
   const [video] = trpc.videos.getOne.useSuspenseQuery({ id: videoId });
   const createView = trpc.videoViews.create.useMutation({
@@ -46,11 +54,6 @@ const VideoSectionSuspense = ({ videoId }: VideoSectionProps) => {
 
   const handlePlay = () => {
     return () => {
-      if (!isSignedIn) {
-        console.warn("User is not signed in. Skipping view count.");
-        return;
-      }
-
       if (hasFiredRef.current) {
         return;
       }
@@ -70,7 +73,7 @@ const VideoSectionSuspense = ({ videoId }: VideoSectionProps) => {
         )}
       >
         <VideoPlayer
-          onPlay={handlePlay}
+          onPlay={handlePlay()}
           playbackId={video.muxPlaybackId}
           thumbnailUrl={video.thumbnailUrl}
           assetId={video.muxAssetId}

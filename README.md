@@ -172,9 +172,16 @@
 
 ## PART 20 Subscriptions 🦒
 
-- Create subscriptions schema
-- Combine subscriptions for "getOne" videos procedure
-- Create subscriptionButton component with new API
+- Create subscriptions schema ✅
+- Combine subscriptions for "getOne" videos procedure ✅
+- Create subscriptions procedures ✅
+- Create subscriptionButton component with new API ✅
+
+## PART 21 Comments 🍔
+
+- Create comments schema
+- Create comments procedures
+- Create comments section
 
 ## Deploy on Vercel
 
