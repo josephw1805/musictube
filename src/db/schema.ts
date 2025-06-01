@@ -14,7 +14,11 @@ import {
   createSelectSchema,
   createUpdateSchema,
 } from "drizzle-zod";
-import { ZodObject } from "zod";
+import { ZodType } from "zod";
+
+function toZodSchema<T extends ZodType>(schema: unknown): T {
+  return schema as T;
+}
 
 export const users = pgTable(
   "users",
@@ -125,15 +129,15 @@ export const videos = pgTable("videos", {
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
 
-export const videoInsertSchema = createInsertSchema(
-  videos
-) as unknown as ZodObject<any>;
-export const videoUpdateSchema = createUpdateSchema(
-  videos
-) as unknown as ZodObject<any>;
-export const videoSelectSchema = createSelectSchema(
-  videos
-) as unknown as ZodObject<any>;
+export const videoInsertSchema = toZodSchema<ZodType>(
+  createInsertSchema(videos)
+);
+export const videoSelectSchema = toZodSchema<ZodType>(
+  createSelectSchema(videos)
+);
+export const videoUpdateSchema = toZodSchema<ZodType>(
+  createUpdateSchema(videos)
+);
 
 export const videoRelations = relations(videos, ({ one, many }) => ({
   user: one(users, {
@@ -204,15 +208,15 @@ export const videoViewRelations = relations(videoViews, ({ one }) => ({
   }),
 }));
 
-export const videoViewInsertSchema = createInsertSchema(
-  videoViews
-) as unknown as ZodObject<any>;
-export const videoViewUpdateSchema = createUpdateSchema(
-  videoViews
-) as unknown as ZodObject<any>;
-export const videoViewSelectSchema = createSelectSchema(
-  videoViews
-) as unknown as ZodObject<any>;
+export const videoViewInsertSchema = toZodSchema<ZodType>(
+  createInsertSchema(videoViews)
+);
+export const videoViewSelectSchema = toZodSchema<ZodType>(
+  createSelectSchema(videoViews)
+);
+export const videoViewUpdateSchema = toZodSchema<ZodType>(
+  createUpdateSchema(videoViews)
+);
 
 export const reactionType = pgEnum("reaction_type", ["like", "dislike"]);
 
@@ -248,12 +252,12 @@ export const videoReactionRelations = relations(videoReactions, ({ one }) => ({
   }),
 }));
 
-export const videoReactionInsertSchema = createInsertSchema(
-  videoReactions
-) as unknown as ZodObject<any>;
-export const videoReactionUpdateSchema = createUpdateSchema(
-  videoReactions
-) as unknown as ZodObject<any>;
-export const videoReactionSelectSchema = createSelectSchema(
-  videoReactions
-) as unknown as ZodObject<any>;
+export const videoReactionInsertSchema = toZodSchema<ZodType>(
+  createInsertSchema(videoReactions)
+);
+export const videoReactionUpdateSchema = toZodSchema<ZodType>(
+  createUpdateSchema(videoReactions)
+);
+export const videoReactionSelectSchema = toZodSchema<ZodType>(
+  createSelectSchema(videoReactions)
+);

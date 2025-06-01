@@ -185,9 +185,16 @@
 
 ## PART 22 Comments infinite loading 🍒
 
-- Modify comments "getMany" procedure
-- Change prefetch() to prefetchInfinite()
-- Change suspense() to useSuspenseInfiniteQuery()
+- Modify comments "getMany" procedure ✅
+- Change prefetch() to prefetchInfinite() ✅
+- Change suspense() to useSuspenseInfiniteQuery() ✅
+- Add InfiniteLoading component ✅
+
+## PART 23 Comments reactions 🦀
+
+- Add "commentReactions" schema
+- Create comment reactions UI
+- Combine "commentReactions" with comments "getMany procedure
 - Add InfiniteLoading component
 
 ## Deploy on Vercel
