@@ -179,9 +179,16 @@
 
 ## PART 21 Comments 🍔
 
-- Create comments schema
-- Create comments procedures
-- Create comments section
+- Create comments schema ✅
+- Create comments procedures ✅
+- Create comments section ✅
+
+## PART 22 Comments infinite loading 🍒
+
+- Modify comments "getMany" procedure
+- Change prefetch() to prefetchInfinite()
+- Change suspense() to useSuspenseInfiniteQuery()
+- Add InfiniteLoading component
 
 ## Deploy on Vercel
 

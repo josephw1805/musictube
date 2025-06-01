@@ -42,7 +42,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { z } from "zod";
-import { videoUpdateSchema } from "@/db/schema";
 import { toast } from "sonner";
 import dynamic from "next/dynamic";
 import Link from "next/link";
@@ -53,6 +52,7 @@ import { THUMBNAIL_FALLBACK } from "@/modules/videos/constants";
 import { ThumbnailUploadModal } from "../components/thumbnail-upload-modal";
 import { ThumbnailGenerateModal } from "../components/thumbnail-generate-modal";
 import { Skeleton } from "@/components/ui/skeleton";
+import { videoUpdateSchema } from "@/db/schema";
 
 interface FormSectionProps {
   videoId: string;
