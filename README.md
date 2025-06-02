@@ -217,10 +217,21 @@
 - VideoGridCard
   - Feed grids
   - fallback for small devices
-- Create suggestions procedure
-- Prefetch suggestions
-- Create videoRowCard and videoGridCard components
-- Connect Suggestions section with new API
+- Create suggestions procedure ✅
+- Prefetch suggestions ✅
+- Create videoRowCard and videoGridCard components ✅
+- Connect Suggestions section with new API ✅
+
+## PART 26 Search page 🍍
+
+- Add manual video re-validation
+  - in case webhooks fail
+  - in case webhooks fire out of order
+- Add proper categoryId query to suggestions
+- Create search procedure
+- Create Search page
+- Prefetch search page
+- Connect search section to API
 
 ## Deploy on Vercel
 

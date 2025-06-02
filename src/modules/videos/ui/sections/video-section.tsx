@@ -8,6 +8,7 @@ import dynamic from "next/dynamic";
 import { VideoBanner } from "../components/video-banner";
 import { VideoTopRow, VideoTopRowSkeleton } from "../components/video-top-row";
 import { VideoPlayerSkeleton } from "@/modules/videos/ui/components/video-player";
+import { useAuth } from "@clerk/nextjs";
 
 interface VideoSectionProps {
   videoId: string;
@@ -16,7 +17,13 @@ interface VideoSectionProps {
 export const VideoSection = ({ videoId }: VideoSectionProps) => {
   return (
     <Suspense fallback={<VideoSectionSkeleton />}>
-      <ErrorBoundary fallback={<p>Error</p>}>
+      <ErrorBoundary
+        fallback={
+          <div className="text-red-500">
+            Something went wrong while loading the video.
+          </div>
+        }
+      >
         <VideoSectionSuspense videoId={videoId} />
       </ErrorBoundary>
     </Suspense>
@@ -43,6 +50,8 @@ const VideoPlayer = dynamic(
 );
 
 const VideoSectionSuspense = ({ videoId }: VideoSectionProps) => {
+  const { isSignedIn } = useAuth();
+
   const hasFiredRef = useRef(false);
   const utils = trpc.useUtils();
   const [video] = trpc.videos.getOne.useSuspenseQuery({ id: videoId });
@@ -53,15 +62,10 @@ const VideoSectionSuspense = ({ videoId }: VideoSectionProps) => {
   });
 
   const handlePlay = () => {
-    return () => {
-      if (hasFiredRef.current) {
-        return;
-      }
-
-      hasFiredRef.current = true;
-
-      createView.mutate({ videoId });
-    };
+    if (hasFiredRef.current) return;
+    if (!isSignedIn) return;
+    hasFiredRef.current = true;
+    createView.mutate({ videoId });
   };
 
   return (
@@ -73,7 +77,7 @@ const VideoSectionSuspense = ({ videoId }: VideoSectionProps) => {
         )}
       >
         <VideoPlayer
-          onPlay={handlePlay()}
+          onPlay={handlePlay}
           playbackId={video.muxPlaybackId}
           thumbnailUrl={video.thumbnailUrl}
           assetId={video.muxAssetId}

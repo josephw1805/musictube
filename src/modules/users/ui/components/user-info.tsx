@@ -33,7 +33,7 @@ export const UserInfo = ({ name, className, size }: UserInfoProps) => {
             {name}
           </p>
         </TooltipTrigger>
-        <TooltipContent align="center">
+        <TooltipContent align="center" className="bg-black/70">
           <p>{name}</p>
         </TooltipContent>
       </Tooltip>
