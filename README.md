@@ -198,12 +198,29 @@
 
 ## PART 24 Comment replies 🚁
 
-- Extend comment schema by adding "parentId" foreign key
-- Create UI for replies
-- Modify comments "getMany" procedure by combining parentId
-- Create variants for "CommentItem" component
-- Create variants for "CommentForm" component
-- Create CommentReplies component
+- Extend comment schema by adding "parentId" foreign key ✅
+- Create UI for replies ✅
+- Modify comments "getMany" procedure by combining parentId ✅
+- Create variants for "CommentItem" component ✅
+- Create variants for "CommentForm" component ✅
+- Create CommentReplies component ✅
+
+## PART 25 Suggestions 🍸
+
+- Compact VideoRowCard
+  - suggestions
+  - playlist items
+  - small devices
+- Regular videoRowCard
+  - search result
+  - large devices
+- VideoGridCard
+  - Feed grids
+  - fallback for small devices
+- Create suggestions procedure
+- Prefetch suggestions
+- Create videoRowCard and videoGridCard components
+- Connect Suggestions section with new API
 
 ## Deploy on Vercel
 
