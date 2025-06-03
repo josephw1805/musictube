@@ -224,14 +224,21 @@
 
 ## PART 26 Search page 🍍
 
-- Add manual video re-validation
-  - in case webhooks fail
-  - in case webhooks fire out of order
-- Add proper categoryId query to suggestions
-- Create search procedure
-- Create Search page
-- Prefetch search page
-- Connect search section to API
+- Add manual video re-validation ✅
+  - in case webhooks fail ✅
+  - in case webhooks fire out of order ✅
+- Add proper categoryId query to suggestions ✅
+- Create search procedure ✅
+- Create Search page ✅
+- Prefetch search page ✅
+- Connect search section to API ✅
+
+## PART 27 Improvements 🚀
+
+- Resolve complex "VERCEL_URL" env usage
+- Fix unique constraint issue with manual video revalidation
+- Add skeleton to search page
+- Add default values to SearchInput component
 
 ## Deploy on Vercel
 
