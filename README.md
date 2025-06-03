@@ -235,10 +235,16 @@
 
 ## PART 27 Improvements 🚀
 
-- Resolve complex "VERCEL_URL" env usage
-- Fix unique constraint issue with manual video revalidation
-- Add skeleton to search page
-- Add default values to SearchInput component
+- Resolve complex "VERCEL_URL" env usage ✅
+- Add skeleton to search page ✅
+- Add default values to SearchInput component ✅
+
+## PART 28 Home feed 🎀
+
+- Create videos procedures
+- Add Home page
+- Add Trending page
+- Add Subscriptions page
 
 ## Deploy on Vercel
 
