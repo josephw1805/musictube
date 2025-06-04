@@ -248,8 +248,14 @@
 
 ## PART 29 Playlists 🐠
 
+- Create playlists procedures ✅
+- Create History & Liked videos pages ✅
+
+## PART 30 Custom playlists 🧝
+
+- Create playlists schema
 - Create playlists procedures
-- Create History & Liked videos pages
+- Create playlists page
 
 ## Deploy on Vercel
 

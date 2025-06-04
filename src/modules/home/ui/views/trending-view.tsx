@@ -1,4 +1,4 @@
-import { TrendingVideoSection } from "../sections/trending-video-section";
+import { TrendingVideosSection } from "../sections/trending-videos-section";
 
 export const TrendingView = () => {
   return (
@@ -9,7 +9,7 @@ export const TrendingView = () => {
           Most popular videos at the moment
         </p>
       </div>
-      <TrendingVideoSection />
+      <TrendingVideosSection />
     </div>
   );
 };
