@@ -14,7 +14,11 @@ export const CategoriesSection = ({ categoryId }: CategoriesSectionProps) => {
   return (
     <Suspense fallback={<CategoriesSkeleton />}>
       <ErrorBoundary
-        fallback={<p className="p-4 text-center text-red-500">Error...</p>}
+        fallbackRender={({ error }) => (
+          <p className="p-4 text-center text-red-500">
+            {error.message || "Something went wrong."}
+          </p>
+        )}
       >
         <CategoriesSectionSuspense categoryId={categoryId} />
       </ErrorBoundary>
@@ -36,14 +40,17 @@ const CategoriesSectionSuspense = ({ categoryId }: CategoriesSectionProps) => {
   }));
 
   const onSelect = (value: string | null) => {
-    const url = new URL(window.location.href);
+    const params = new URLSearchParams(window.location.search);
 
     if (value) {
-      url.searchParams.set("categoryId", value);
+      params.set("categoryId", value);
     } else {
-      url.searchParams.delete("categoryId");
+      params.delete("categoryId");
     }
-    router.push(url.toString());
+
+    const query = params.toString();
+    const path = query ? `?${query}` : "/";
+    router.push(path);
   };
 
   return <FilterCarousel onSelect={onSelect} value={categoryId} data={data} />;

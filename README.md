@@ -241,10 +241,15 @@
 
 ## PART 28 Home feed 🎀
 
-- Create videos procedures
-- Add Home page
-- Add Trending page
-- Add Subscriptions page
+- Create videos procedures ✅
+- Add Home page ✅
+- Add Trending page ✅
+- Add Subscriptions page ✅
+
+## PART 29 Playlists 🐠
+
+- Create playlists procedures
+- Create History & Liked videos pages
 
 ## Deploy on Vercel
 

@@ -43,11 +43,7 @@ export const InfiniteScroll = ({
         >
           {isFetchingNextPage ? "Loading..." : "Load more"}
         </Button>
-      ) : (
-        <p className="text-xs text-muted-foreground">
-          You have reached the end of the list
-        </p>
-      )}
+      ) : null}
     </div>
   );
 };
