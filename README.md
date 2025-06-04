@@ -253,9 +253,15 @@
 
 ## PART 30 Custom playlists 🧝
 
-- Create playlists schema
-- Create playlists procedures
-- Create playlists page
+- Create playlists schema ✅
+- Create playlists procedures ✅
+- Create playlists page ✅
+
+## PART 31 Populating playlists ☕
+
+- Create PlaylistAddModal component
+- Create "getManyForVideo" playlist procedure
+- Create add and remove procedures for playlists
 
 ## Deploy on Vercel
 
