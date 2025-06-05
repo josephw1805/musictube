@@ -50,6 +50,7 @@ const HomeVideoSectionSuspense = ({ categoryId }: HomeVideoSectionProps) => {
           ))}
       </div>
       <InfiniteScroll
+        isManual
         hasNextPage={query.hasNextPage}
         isFetchingNextPage={query.isFetchingNextPage}
         fetchNextPage={query.fetchNextPage}
