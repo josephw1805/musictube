@@ -14,7 +14,11 @@ export const CategoriesSection = ({ categoryId }: CategoriesSectionProps) => {
   return (
     <Suspense fallback={<CategoriesSkeleton />}>
       <ErrorBoundary
-        fallback={<p className="p-4 text-center text-red-500">Error...</p>}
+        fallbackRender={({ error }) => (
+          <p className="p-4 text-center text-red-500">
+            {error.message || "Something went wrong."}
+          </p>
+        )}
       >
         <CategoriesSectionSuspense categoryId={categoryId} />
       </ErrorBoundary>

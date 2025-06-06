@@ -25,7 +25,13 @@ export const SuggestionsSection = ({
 }: SuggestionsSectionProps) => {
   return (
     <Suspense fallback={<SuggestionsSectionSkeleton />}>
-      <ErrorBoundary fallback={<p>Error</p>}>
+      <ErrorBoundary
+        fallbackRender={({ error }) => (
+          <p className="p-4 text-center text-red-500">
+            {error.message || "Something went wrong."}
+          </p>
+        )}
+      >
         <SuggestionsSectionSuspense videoId={videoId} isManual={isManual} />
       </ErrorBoundary>
     </Suspense>
@@ -36,12 +42,12 @@ const SuggestionsSectionSkeleton = () => {
   return (
     <>
       <div className="hiden md:block space-y-3">
-        {Array.from({ length: 6 }).map((_, index) => (
+        {Array.from({ length: DEFAULT_LIMIT }).map((_, index) => (
           <VideoRowCardSkeleton key={index} size="compact" />
         ))}
       </div>
       <div className="bock md:hidden space-y-10">
-        {Array.from({ length: 6 }).map((_, index) => (
+        {Array.from({ length: DEFAULT_LIMIT }).map((_, index) => (
           <VideoGridCardSkeleton key={index} />
         ))}
       </div>

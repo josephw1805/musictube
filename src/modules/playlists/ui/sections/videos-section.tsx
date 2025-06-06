@@ -22,7 +22,13 @@ interface VideosSectionProps {
 export const VideosSection = ({ playlistId }: VideosSectionProps) => {
   return (
     <Suspense fallback={<VideosSectionSkeleton />}>
-      <ErrorBoundary fallback={<p>Error</p>}>
+      <ErrorBoundary
+        fallbackRender={({ error }) => (
+          <p className="p-4 text-center text-red-500">
+            {error.message || "Something went wrong."}
+          </p>
+        )}
+      >
         <VideosSectionSuspense playlistId={playlistId} />
       </ErrorBoundary>
     </Suspense>
@@ -33,12 +39,12 @@ const VideosSectionSkeleton = () => {
   return (
     <>
       <div className="flex flex-col gap-4 gap-y-10 md:hidden">
-        {Array.from({ length: 18 }).map((_, index) => (
+        {Array.from({ length: DEFAULT_LIMIT }).map((_, index) => (
           <VideoGridCardSkeleton key={index} />
         ))}
       </div>
       <div className="hidden flex-col gap-4 md:flex">
-        {Array.from({ length: 18 }).map((_, index) => (
+        {Array.from({ length: DEFAULT_LIMIT }).map((_, index) => (
           <VideoRowCardSkeleton key={index} size="compact" />
         ))}
       </div>

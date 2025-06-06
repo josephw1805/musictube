@@ -17,7 +17,13 @@ import { ErrorBoundary } from "react-error-boundary";
 export const HistoryVideosSection = () => {
   return (
     <Suspense fallback={<HistoryVideosSectionSkeleton />}>
-      <ErrorBoundary fallback={<p>Error</p>}>
+      <ErrorBoundary
+        fallbackRender={({ error }) => (
+          <p className="p-4 text-center text-red-500">
+            {error.message || "Something went wrong."}
+          </p>
+        )}
+      >
         <HistoryVideosSectionSuspense />
       </ErrorBoundary>
     </Suspense>
@@ -28,12 +34,12 @@ const HistoryVideosSectionSkeleton = () => {
   return (
     <>
       <div className="flex flex-col gap-4 gap-y-10 md:hidden">
-        {Array.from({ length: 18 }).map((_, index) => (
+        {Array.from({ length: DEFAULT_LIMIT }).map((_, index) => (
           <VideoGridCardSkeleton key={index} />
         ))}
       </div>
       <div className="hidden flex-col gap-4 md:flex">
-        {Array.from({ length: 18 }).map((_, index) => (
+        {Array.from({ length: DEFAULT_LIMIT }).map((_, index) => (
           <VideoRowCardSkeleton key={index} size="compact" />
         ))}
       </div>

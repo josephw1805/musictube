@@ -25,7 +25,13 @@ export const ResultsSection = (props: ResultsSectionProps) => {
       key={`${props.query}-${props.categoryId}`}
       fallback={<ResultsSectionSkeleton />}
     >
-      <ErrorBoundary fallback={<p>Error...</p>}>
+      <ErrorBoundary
+        fallbackRender={({ error }) => (
+          <p className="p-4 text-center text-red-500">
+            {error.message || "Something went wrong."}
+          </p>
+        )}
+      >
         <ResultsSectionSuspense {...props} />
       </ErrorBoundary>
     </Suspense>
@@ -36,12 +42,12 @@ const ResultsSectionSkeleton = () => {
   return (
     <div>
       <div className="hidden flex-col gap-4 md:flex">
-        {Array.from({ length: 5 }).map((_, index) => (
+        {Array.from({ length: DEFAULT_LIMIT }).map((_, index) => (
           <VideoRowCardSkeleton key={index} />
         ))}
       </div>
       <div className="flex flex-col gap-4 p-4 gap-y-10 pt-6 md:hidden">
-        {Array.from({ length: 5 }).map((_, index) => (
+        {Array.from({ length: DEFAULT_LIMIT }).map((_, index) => (
           <VideoGridCardSkeleton key={index} />
         ))}
       </div>

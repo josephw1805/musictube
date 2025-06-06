@@ -20,7 +20,13 @@ interface UserSectionProps {
 export const UserSection = (props: UserSectionProps) => {
   return (
     <Suspense fallback={<UserSectionSkeleton />}>
-      <ErrorBoundary fallback={<p>Error</p>}>
+      <ErrorBoundary
+        fallbackRender={({ error }) => (
+          <p className="p-4 text-center text-red-500">
+            {error.message || "Something went wrong."}
+          </p>
+        )}
+      >
         <UserSectionSuspense {...props} />
       </ErrorBoundary>
     </Suspense>

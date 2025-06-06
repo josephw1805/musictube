@@ -18,11 +18,11 @@ export const VideoSection = ({ videoId }: VideoSectionProps) => {
   return (
     <Suspense fallback={<VideoSectionSkeleton />}>
       <ErrorBoundary
-        fallback={
-          <div className="text-red-500">
-            Something went wrong while loading the video.
-          </div>
-        }
+        fallbackRender={({ error }) => (
+          <p className="p-4 text-center text-red-500">
+            {error.message || "Something went wrong."}
+          </p>
+        )}
       >
         <VideoSectionSuspense videoId={videoId} />
       </ErrorBoundary>

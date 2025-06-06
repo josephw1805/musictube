@@ -23,7 +23,13 @@ import { Skeleton } from "@/components/ui/skeleton";
 export const VideosSection = () => {
   return (
     <Suspense fallback={<VideoSectionSkeleton />}>
-      <ErrorBoundary fallback={<p>Error</p>}>
+      <ErrorBoundary
+        fallbackRender={({ error }) => (
+          <p className="p-4 text-center text-red-500">
+            {error.message || "Something went wrong."}
+          </p>
+        )}
+      >
         <VideosSectionSuspense />
       </ErrorBoundary>
     </Suspense>

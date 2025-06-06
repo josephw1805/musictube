@@ -16,7 +16,13 @@ interface CommentsSectionProps {
 export const CommentsSection = ({ videoId }: CommentsSectionProps) => {
   return (
     <Suspense fallback={<CommentsSectionSkeleton />}>
-      <ErrorBoundary fallback={<p>Error...</p>}>
+      <ErrorBoundary
+        fallbackRender={({ error }) => (
+          <p className="p-4 text-center text-red-500">
+            {error.message || "Something went wrong."}
+          </p>
+        )}
+      >
         <CommentsSectionSuspense videoId={videoId} />
       </ErrorBoundary>
     </Suspense>
