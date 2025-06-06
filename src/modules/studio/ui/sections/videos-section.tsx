@@ -121,7 +121,7 @@ const VideosSectionSuspense = () => {
               .map((video) => (
                 <TableRow className="cursor-pointer" key={video.id}>
                   <TableCell className="pl-6">
-                    <Link href={`/studio/videos/${video.id}`}>
+                    <Link prefetch href={`/studio/videos/${video.id}`}>
                       <div className="flex items-center gap-4">
                         <div className="relative aspect-video w-36 shrink-0">
                           <VideoThumbnail
