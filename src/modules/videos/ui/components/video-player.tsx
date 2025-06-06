@@ -5,7 +5,7 @@ import videojs from "video.js";
 import type Player from "video.js/dist/types/player";
 
 import "video.js/dist/video-js.css";
-import "@videojs/themes/dist/city/index.css";
+import "@videojs/themes/dist/fantasy/index.css";
 import { THUMBNAIL_FALLBACK } from "../../constants";
 
 interface VideoPlayerProps {
@@ -97,7 +97,7 @@ export const VideoPlayer = ({
       <video
         key={playbackId}
         ref={videoRef}
-        className="video-js vjs-theme-city w-full h-full rounded-lg"
+        className="video-js vjs-theme-fantasy w-full h-full rounded-lg"
         preload="auto"
         poster={thumbnailUrl || THUMBNAIL_FALLBACK}
         playsInline

@@ -272,10 +272,15 @@
 
 ## PART 33 User page 🍎
 
-- Add "bannerUrl" and "bannerKey" to user schema
-- Create "users.getOne" procedure
-- Modify "videos.getMany" procedure to accept userId prop
-- Create userId page
+- Add "bannerUrl" and "bannerKey" to user schema ✅
+- Create "users.getOne" procedure ✅
+- Modify "videos.getMany" procedure to accept userId prop ✅
+- Create userId page ✅
+
+## PART 34 Banner upload 🥑
+
+- Implement "bannerUploader" in uploadthing/core.ts
+- Create BannerUploadModal
 
 ## Deploy on Vercel
 
