@@ -279,8 +279,14 @@
 
 ## PART 34 Banner upload 🥑
 
-- Implement "bannerUploader" in uploadthing/core.ts
-- Create BannerUploadModal
+- Implement "bannerUploader" in uploadthing/core.ts ✅
+- Create BannerUploadModal ✅
+
+## PART 35 Subscriptions list 🐷
+
+- Create subscriptions "getMany" procedure
+- Load recent subscriptions in sidebar
+- Create all subscriptions page
 
 ## Deploy on Vercel
 
