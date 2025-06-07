@@ -14,9 +14,9 @@ export const AboutSection = () => {
           <p className="text-gray-600">
             Fast-track your listening experience with expertly curated music
             that guides you effortlessly through diverse genres and timeless
-            playlists. Whether you're seeking iconic classics or undiscovered
-            gems, we make it easy to explore, connect, and enjoy your perfect
-            soundtrack — all in one place.
+            playlists. Whether you&apos;re seeking iconic classics or
+            undiscovered gems, we make it easy to explore, connect, and enjoy
+            your perfect soundtrack — all in one place.
           </p>
         </div>
         <div className="md:w-1/2 flex justify-center mt-6 md:mt-0">

@@ -21,8 +21,9 @@ export const HeroSection = () => {
           Discover Your Sound at <br /> Music Place
         </h1>
         <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
-          "Curated Recommendations for Every Music Lover's Journey. <br />
-          Listen, Explore, and Enjoy the Best of Music with Ease."
+          &quot;Curated Recommendations for Every Music Lover&apos;s Journey.
+          <br />
+          Listen, Explore, and Enjoy the Best of Music with Ease.&quot;
         </p>
       </div>
     </section>

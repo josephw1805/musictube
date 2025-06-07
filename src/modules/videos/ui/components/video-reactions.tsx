@@ -5,7 +5,6 @@ import { ThumbsDown, ThumbsUp } from "lucide-react";
 import { VideoGetOneOutput } from "../../types";
 import { useClerk } from "@clerk/nextjs";
 import { trpc } from "@/trpc/client";
-import { toast } from "sonner";
 
 interface VideoReactionProps {
   videoId: string;

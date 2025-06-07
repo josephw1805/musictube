@@ -11,10 +11,10 @@ export const SupportSection = () => {
             </span>
           </p>
           <p className="text-black leading-relaxed mb-8 mt-8">
-            At WDIA, we're passionate about connecting music lovers with the
-            best albums, fast. Our curated selection ensures quality and style,
-            making it easy to discover, collect, and enjoy music that truly
-            moves you.
+            At WDIA, we&apos;re passionate about connecting music lovers with
+            the best albums, fast. Our curated selection ensures quality and
+            style, making it easy to discover, collect, and enjoy music that
+            truly moves you.
           </p>
           <div className="flex flex-wrap gap-4">
             <a
