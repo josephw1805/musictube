@@ -511,7 +511,7 @@ export const videosRouter = createTRPCRouter({
           },
         ],
       },
-      cors_origin: "*", // TODO: In production, set to the url
+      cors_origin: "https://musicplace.vercel.app",
     });
 
     const [video] = await db
