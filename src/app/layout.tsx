@@ -18,8 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider afterSignOutUrl="/" frontendApi={process.env.NEXT_PUBLIC_CLERK_FRONTEND_API}
-      publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
+    <ClerkProvider afterSignOutUrl="/">
       <html lang="en">
         <body className={inter.className}>
           <TRPCProvider>
