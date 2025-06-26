@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider afterSignOutUrl="/" unsafe_disableDevelopmentModeWarnings={true}>
+    <ClerkProvider afterSignOutUrl="/">
       <html lang="en">
         <body className={inter.className}>
           <TRPCProvider>
